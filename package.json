@@ -119,6 +119,11 @@
 		"configuration": {
 			"title": "Toggle Case",
 			"properties": {
+				"toggleCase.sequences": {
+					"type": "array",
+					"default": [],
+					"markdownDescription": "The custom sequences of each case like [\"lowerCase\", \"upperCase\"], unmentioned ones will be put at the end of list."
+				},
 				"toggleCase.case.upperCase": {
 					"type": "boolean",
 					"default": true,

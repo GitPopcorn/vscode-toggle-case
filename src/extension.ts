@@ -44,6 +44,7 @@ const arrayShallowEqual = function(arr1: any[], arr2: any[]) {
 
 const logic = (context: vscode.ExtensionContext, changeCaseTo: string = "") => {
 	const config = vscode.workspace.getConfiguration('toggleCase.case');
+	const sequencesConfig = vscode.workspace.getConfiguration('toggleCase').get("sequences");
 	const notificationConfig = vscode.workspace.getConfiguration('toggleCase.notification');
 	const textEditor = vscode.window.activeTextEditor!;
 	
@@ -71,7 +72,7 @@ const logic = (context: vscode.ExtensionContext, changeCaseTo: string = "") => {
 		currentCase = globalData.currentCase;
 		
 	}
-	const toggleTo = changeCaseTo || getNextCase(currentCase, config);
+	const toggleTo = changeCaseTo || getNextCase(currentCase, config, sequencesConfig);
 	const toggleToObject = (CONFIG as {[x: string]: IConfig})[toggleTo];
 	const newRepresentation = toggleToObject.representation;
 	const newCase = toggleToObject.caseName;

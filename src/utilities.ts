@@ -1,10 +1,22 @@
 import * as changeCase from "change-case";
 import { IConfig } from './models';
 
-export const getNextCase = (currentCase: string, allowedCase: any) => {
+export const getNextCase = (currentCase: string, allowedCase: any, customSequences: any) => {
 	const allCases = Object.keys(CONFIG);
+	const allNames = allCases.map(key => CONFIG[key].configParam);
+	const sortedAllCases = customSequences.map((name: string) => allCases[allNames.indexOf(name)]).filter((key: string) => key);
+	allCases.forEach(key => {
+		if (!(sortedAllCases.includes(key))) {
+			sortedAllCases.push(key);
+			
+		}
+		
+	});
+	const fixedHead = "ORIGINAL";
+	sortedAllCases.splice(sortedAllCases.indexOf(fixedHead), 1);
+	sortedAllCases.unshift(fixedHead);
 	const allowedCasesConfig = {...allowedCase, 'original': true};
-	const acceptedCases = allCases.filter((c: string) => allowedCasesConfig[CONFIG[c].configParam]);
+	const acceptedCases = sortedAllCases.filter((c: string) => allowedCasesConfig[CONFIG[c].configParam]);
 	const index = acceptedCases.indexOf(currentCase);
 	if(index === -1 || index === acceptedCases.length - 1) {
 		return acceptedCases[0];
