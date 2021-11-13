@@ -45,10 +45,16 @@ export const CONFIG: {
 	  representation: 'lowercase',
 	  fn: (str: string) => str.toLowerCase()
 	},
+	CAPITALCASE: {
+	  caseName: 'CAPITALCASE',
+	  configParam: 'capitalCase',
+	  representation: 'Capital Case',
+	  fn: toCapitalCase
+	},
 	TITLECASE: {
 	  caseName: 'TITLECASE',
 	  configParam: 'titleCase',
-	  representation: 'Title Case',
+	  representation: 'Titlecase',
 	  fn: toTitleCase
 	},
 	CAMELCASE: {
@@ -75,7 +81,7 @@ export const CONFIG: {
 	  representation: 'Header-Case',
 	  fn: toHeaderCase
 	},
-	PARAMCASE: {
+	KEBABCASE: {
 	  caseName: 'KEBABCASE',
 	  configParam: 'kebabCase',
 	  representation: 'kebab-case',

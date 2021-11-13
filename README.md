@@ -34,7 +34,8 @@ This extension supports multiple ways to change the case and it works on both si
 You can toggle through multiple cases, you can find the complete list below:
   - UPPERCASE
   - lowercase
-  - Title Case
+  - Capital Case
+  - Titlecase
   - camelCase
   - CONSTANT_CASE
   - dot.case

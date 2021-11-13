@@ -55,8 +55,12 @@
 				"title":"Transform case to lowerCase (lowercase)"
 			 },
 			 {
+				"command":"extension.changeCase.capitalCase",
+				"title":"Transform case to capitalCase (Capital Case)"
+			 },
+			 {
 				"command":"extension.changeCase.titleCase",
-				"title":"Transform case to titleCase (Title Case)"
+				"title":"Transform case to titleCase (Titlecase)"
 			 },
 			 {
 				"command":"extension.changeCase.camelCase",
@@ -76,7 +80,7 @@
 			 },
 			 {
 				"command":"extension.changeCase.kebabCase",
-				"title":"Transform case to paramCase (kebab-case)"
+				"title":"Transform case to kebabCase (kebab-case)"
 			 },
 			 {
 				"command":"extension.changeCase.pascalCase",
@@ -133,7 +137,7 @@
 				"toggleCase.case.titleCase": {
 					"type": "boolean",
 					"default": true,
-					"markdownDescription": "Check to keep `Title Case` formatting in loop"
+					"markdownDescription": "Check to keep `Titlecase` formatting in loop"
 				},
 				"toggleCase.case.camelCase": {
 					"type": "boolean",
