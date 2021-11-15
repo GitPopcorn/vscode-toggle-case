@@ -43,60 +43,114 @@
 	"contributes": {
 		"commands": [
 			{
-				"command": "extension.toggleCase",
-				"title": "Toggle Case"
+				"command" : "extension.toggleCase",
+				"category": "Toggle Case",
+				"title" : "Toggle Case"
 			},
 			{
-				"command":"extension.changeCase.upperCase",
-				"title":"Transform case to upperCase (UPPERCASE)"
+				"command" : "extension.toggleCaseBetweenUpperAndLower",
+				"category": "Toggle Case",
+				"title" : "Toggle Case between UPPERCASE and lowercase"
+			},
+			{
+				"command" : "extension.toggleCaseBetweenUpperAndLowerSeparately",
+				"category": "Toggle Case",
+				"title" : "Toggle Case between UPPERCASE and lowercase separately for each selection"
+			},
+			{
+				"command" : "extension.toggleCaseBetweenUpperLowerAndOriginal",
+				"category": "Toggle Case",
+				"title" : "Toggle Case between UPPERCASE and lowercase and original"
+			},
+			{
+				"command" : "extension.customToggleCase1",
+				"category": "Toggle Case",
+				"title" : "Toggle Case among custom case sequence 1"
+			},
+			{
+				"command" : "extension.customToggleCase2",
+				"category": "Toggle Case",
+				"title" : "Toggle Case among custom case sequence 2"
+			},
+			{
+				"command" : "extension.customToggleCase3",
+				"category": "Toggle Case",
+				"title" : "Toggle Case among custom case sequence 3"
+			},
+			{
+				"command" : "extension.customToggleCase4",
+				"category": "Toggle Case",
+				"title" : "Toggle Case among custom case sequence 4"
+			},
+			{
+				"command" : "extension.customToggleCase5",
+				"category": "Toggle Case",
+				"title" : "Toggle Case among custom case sequence 5"
+			},
+			{
+				"command": "extension.changeCase.upperCase",
+				"category": "Toggle Case",
+				"title": "Transform case to upperCase (UPPERCASE)"
 			 },
 			 {
-				"command":"extension.changeCase.lowerCase",
-				"title":"Transform case to lowerCase (lowercase)"
+				"command": "extension.changeCase.lowerCase",
+				"category": "Toggle Case",
+				"title": "Transform case to lowerCase (lowercase)"
 			 },
 			 {
-				"command":"extension.changeCase.capitalCase",
-				"title":"Transform case to capitalCase (Capital Case)"
+				"command": "extension.changeCase.capitalCase",
+				"category": "Toggle Case",
+				"title": "Transform case to capitalCase (Capital Case)"
 			 },
 			 {
-				"command":"extension.changeCase.titleCase",
-				"title":"Transform case to titleCase (Titlecase)"
+				"command": "extension.changeCase.titleCase",
+				"category": "Toggle Case",
+				"title": "Transform case to titleCase (Titlecase)"
 			 },
 			 {
-				"command":"extension.changeCase.camelCase",
-				"title":"Transform case to camelCase (camelCase)"
+				"command": "extension.changeCase.camelCase",
+				"category": "Toggle Case",
+				"title": "Transform case to camelCase (camelCase)"
 			 },
 			 {
-				"command":"extension.changeCase.constantCase",
-				"title":"Transform case to constantCase (CONSTANT_CASE)"
+				"command": "extension.changeCase.constantCase",
+				"category": "Toggle Case",
+				"title": "Transform case to constantCase (CONSTANT_CASE)"
 			 },
 			 {
-				"command":"extension.changeCase.dotCase",
-				"title":"Transform case to dotCase (dot.case)"
+				"command": "extension.changeCase.dotCase",
+				"category": "Toggle Case",
+				"title": "Transform case to dotCase (dot.case)"
 			 },
 			 {
-				"command":"extension.changeCase.headerCase",
-				"title":"Transform case to headerCase (Header-Case)"
+				"command": "extension.changeCase.headerCase",
+				"category": "Toggle Case",
+				"title": "Transform case to headerCase (Header-Case)"
 			 },
 			 {
-				"command":"extension.changeCase.kebabCase",
-				"title":"Transform case to kebabCase (kebab-case)"
+				"command": "extension.changeCase.kebabCase",
+				"category": "Toggle Case",
+				"title": "Transform case to kebabCase (kebab-case)"
 			 },
 			 {
-				"command":"extension.changeCase.pascalCase",
-				"title":"Transform case to pascalCase (PascalCase)"
+				"command": "extension.changeCase.pascalCase",
+				"category": "Toggle Case",
+				"title": "Transform case to pascalCase (PascalCase)"
 			 },
 			 {
-				"command":"extension.changeCase.pathCase",
-				"title":"Transform case to pathCase (path/case)"
+				"command": "extension.changeCase.pathCase",
+				"category": "Toggle Case",
+				"title": "Transform case to pathCase (path/case)"
 			 },
 			 {
-				"command":"extension.changeCase.sentenceCase",
-				"title":"Transform case to sentenceCase (Sentence case)"
+				"command": "extension.changeCase.sentenceCase",
+				"category": "Toggle Case",
+				"title": "Transform case to sentenceCase (Sentence case)"
 			 },
 			 {
-				"command":"extension.changeCase.snakeCase",
-				"title":"Transform case to snakeCase (snake_case)"
+				"command": "extension.changeCase.snakeCase",
+				"category": "Toggle Case",
+				"title": "Transform case to snakeCase (snake_case)"
 			 }
 		],
 		"keybindings": [
@@ -123,6 +177,31 @@
 					"type": "array",
 					"default": [],
 					"markdownDescription": "The custom sequences of each case like [\"lowerCase\", \"upperCase\"], unmentioned ones will be put at the end of list."
+				},
+				"toggleCase.customSequences1": {
+					"type": "array",
+					"default": [],
+					"markdownDescription": "The custom sequences of each case like [\"lowerCase\", \"upperCase\"], unmentioned ones will be ignored, using for extension.customToggleCase1."
+				},
+				"toggleCase.customSequences2": {
+					"type": "array",
+					"default": [],
+					"markdownDescription": "The custom sequences of each case like [\"lowerCase\", \"upperCase\"], unmentioned ones will be ignored, using for extension.customToggleCase2."
+				},
+				"toggleCase.customSequences3": {
+					"type": "array",
+					"default": [],
+					"markdownDescription": "The custom sequences of each case like [\"lowerCase\", \"upperCase\"], unmentioned ones will be ignored, using for extension.customToggleCase3."
+				},
+				"toggleCase.customSequences4": {
+					"type": "array",
+					"default": [],
+					"markdownDescription": "The custom sequences of each case like [\"lowerCase\", \"upperCase\"], unmentioned ones will be ignored, using for extension.customToggleCase4."
+				},
+				"toggleCase.customSequences5": {
+					"type": "array",
+					"default": [],
+					"markdownDescription": "The custom sequences of each case like [\"lowerCase\", \"upperCase\"], unmentioned ones will be ignored, using for extension.customToggleCase5."
 				},
 				"toggleCase.case.upperCase": {
 					"type": "boolean",
