@@ -49,6 +49,7 @@ const logic = (context: vscode.ExtensionContext, options: any={}) => {
 	let sequencesConfig: string[] = toggleCaseConfig.get("sequences") || [];
 	const notificationConfig: any = toggleCaseConfig.get("notification");
 	const camelCaseConvertor = (name: any) => (name ? CONFIG.CAMELCASE.fn(name) : "");
+	const camelKeywordNormalizer = (name: any) => (name ? name.replace(/case/i, "Case") : "");
 	const allowedCaseConfigReducer = (prev: any, curr: string, index: number, arr: string[]) => {
 		prev = prev || {};
 		prev[curr] = true;
@@ -58,7 +59,7 @@ const logic = (context: vscode.ExtensionContext, options: any={}) => {
 	
 	// STEP Number Handle configs
 	allowedCaseConfig = Object.keys(allowedCaseConfig).reduce(allowedCaseConfigReducer, {});
-	sequencesConfig = sequencesConfig.map(camelCaseConvertor).filter(name => (name && name.trim()));
+	sequencesConfig = sequencesConfig.map(camelCaseConvertor).map(camelKeywordNormalizer).filter(name => (name && name.trim()));
 	
 	// STEP Number Handle custom case sequences if asked
 	if (options.customSequencesType) {
@@ -71,6 +72,7 @@ const logic = (context: vscode.ExtensionContext, options: any={}) => {
 		} else {
 			customAllowedCaseConfig = customAllowedCaseConfig
 				.map(camelCaseConvertor)
+				.map(camelKeywordNormalizer)
 				.filter((name: any) => (name && name.trim()))
 			;
 			allowedCaseConfig = customAllowedCaseConfig.reduce(allowedCaseConfigReducer, {});
