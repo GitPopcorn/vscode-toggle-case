@@ -29,7 +29,8 @@ const onSelectionChange = function(context: any, options: any, a: any[]) {
 	}
 	options = Object.assign({ updateAllTexts: true, updateAllTextsTemp: true, updateCurrentCase: true}, options);
 	const textEditor = vscode.window.activeTextEditor!;
-	const globalData = context.globalState.get(CASE_CONTEXT);
+	// const globalData = context.globalState.get(CASE_CONTEXT);
+	const globalData = context.globalState.get(CASE_CONTEXT) || {}; // CHANGED 2024061401 Add a default value to avoid undefined error
 	const allTexts: string[] = options.updateAllTexts 
 		? textEditor.selections.map((selection: vscode.Selection) => textEditor.document.getText(selection))
 		: globalData.allTexts
@@ -88,7 +89,8 @@ const logic = (context: vscode.ExtensionContext, options: any={}) => {
 	
 	// CHANGED 2021111301 Check if the current selected texts equal to temp texts, when not, read the selections again
 	const textEditor = vscode.window.activeTextEditor!;
-	let globalData: any = context.globalState.get(CASE_CONTEXT)!;
+	// let globalData: any = context.globalState.get(CASE_CONTEXT)!;
+	let globalData: any = context.globalState.get(CASE_CONTEXT) || {}; // CHANGED 2024061401 Add a default value to avoid undefined error
 	globalData.allTextsTemp = globalData.allTextsTemp || [];
 	let {
 		allTexts,
@@ -104,7 +106,8 @@ const logic = (context: vscode.ExtensionContext, options: any={}) => {
 		// After those bugs fixed, this while loop and all the usage of "allTextsNow", "allTextsTemp" should be removed.
 		var updateAllTexts = (allTextsTemp.filter((text: string) => text).length === 0);
 		onSelectionChange(context, { updateAllTexts: updateAllTexts, updateCurrentCase: false }, [{ "kind": "nonsense" }]);
-		globalData = context.globalState.get(CASE_CONTEXT)!;
+		// globalData = context.globalState.get(CASE_CONTEXT)!;
+		globalData = context.globalState.get(CASE_CONTEXT) || {}; // CHANGED 2024061401 Add a default value to avoid undefined error
 		globalData.allTextsTemp = globalData.allTextsTemp || [];
 		allTexts = globalData.allTexts;
 		allTextsTemp = globalData.allTextsTemp;
