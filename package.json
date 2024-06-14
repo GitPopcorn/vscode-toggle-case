@@ -10,7 +10,7 @@
 	"description": "Toggle through various cases on a key press",
 	"license": "MIT",
 	"icon": "images/logo.png",
-	"version": "0.1.4-SNAPSHOT",
+	"version": "0.1.5-SNAPSHOT",
 	"engines": {
 		"vscode": "^1.46.0"
 	},
